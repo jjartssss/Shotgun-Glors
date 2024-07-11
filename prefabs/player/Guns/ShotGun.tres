@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://prefabs/player/Guns/TestGun.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+GunName = "ShotGun"
+BulletSpeed = 2500
+BulletDamage = 4
+BulletCount = 4
+BulletAccuracy = 100
+BulletLeft = 4
+BulletMax = 4
+AutoFire = false

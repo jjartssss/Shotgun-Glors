@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://prefabs/player/Guns/TestGun.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+GunName = "Machine Gun"
+BulletSpeed = 5000
+BulletDamage = 5
+BulletCount = 1
+BulletAccuracy = 25
+BulletLeft = 50
+BulletMax = 50
+AutoFire = true

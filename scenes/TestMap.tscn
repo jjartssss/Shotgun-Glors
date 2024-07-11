@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://prefabs/player/Roger.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sddefault.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/les-rayons-de-lumiere-fond_23-2147504702.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/istockphoto-455670645-612x612.jpg" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.974, 30.6385 )
+
+[node name="TestMap" type="Node2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 2028, 96 )
+scale = Vector2( 3.45562, 5.30473 )
+texture = ExtResource( 4 )
+color = Color( 0.0745098, 0.0666667, 0.647059, 1 )
+energy = 1.05
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0.486275 )
+
+[node name="Sddefault" type="Sprite" parent="."]
+position = Vector2( 2026, 444 )
+scale = Vector2( 2.75833, 2.75833 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 1273, 990 )
+scale = Vector2( 27.4345, 7.10823 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Icon" type="Sprite" parent="StaticBody2D"]
+self_modulate = Color( 0, 0, 0, 1 )
+scale = Vector2( 19.2344, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, 2.36145 )
+scale = Vector2( 19.2344, 1 )
+shape = SubResource( 1 )
+
+[node name="Roger" parent="." instance=ExtResource( 1 )]
+position = Vector2( 235, 332 )
+
+[node name="Camera2D" type="Camera2D" parent="Roger"]
+offset = Vector2( 0, -200 )
+current = true
+limit_left = -100
+smoothing_enabled = true
+smoothing_speed = 25.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2( 1500, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1400, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 410.439, 308.5 )
+scale = Vector2( 2.3413, 2.3413 )
+texture = ExtResource( 5 )
