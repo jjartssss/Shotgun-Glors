@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/Components/EnemyHealth.gd" type="Script" id=1]
 [ext_resource path="res://scripts/Components/HitCollider.tscn" type="PackedScene" id=2]
@@ -58,6 +58,22 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 55, 156 )
 
+[sub_resource type="Animation" id=12]
+resource_name = "hit_normal"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="TestEnemy" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 4
@@ -72,7 +88,7 @@ position = Vector2( 0, -236 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 6
+frame = 2
 playing = true
 
 [node name="EnemyHealth" type="Node2D" parent="."]
@@ -84,7 +100,13 @@ healthCurrent = 100
 collision_layer = 2
 collision_mask = 2
 healthPath = NodePath("../EnemyHealth")
+animationPath = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitCollider"]
 position = Vector2( 0, -155 )
 shape = SubResource( 10 )
+
+[node name="StateMachine" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hit_normal = SubResource( 12 )
