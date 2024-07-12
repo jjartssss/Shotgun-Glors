@@ -1,6 +1,7 @@
 extends Area2D
 class_name RegularBullet
 export var speed = 3500
+var bulletDamage : int
 var direction = Vector2.ZERO
 
 func _ready():

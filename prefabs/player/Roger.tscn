@@ -130,14 +130,15 @@ animations = [ {
 extents = Vector2( 49, 133 )
 
 [node name="Roger" type="KinematicBody2D"]
+modulate = Color( 0.513726, 0.482353, 0.639216, 1 )
 script = ExtResource( 75 )
 
 [node name="Player" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -2 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-animation = "stand_walkback"
-frame = 3
+animation = "stand_idle"
+frame = 9
 playing = true
 offset = Vector2( -122, -280 )
 
@@ -155,7 +156,7 @@ position = Vector2( 45, 32 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
+frame = 4
 playing = true
 offset = Vector2( 74, -4 )
 

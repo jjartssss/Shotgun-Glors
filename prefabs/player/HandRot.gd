@@ -91,7 +91,6 @@ func _process(delta):
 		rotation = angle
 	if !canShoot:
 		shootTimer += delta
-		print(str(shootTimer))
 		if shootTimer > CurrentGunResource.FireRate:
 			canShoot = true
 
@@ -149,6 +148,7 @@ func fire_projectile(target_position):
 	
 	projectile.global_position = bullet_pos.global_position
 	projectile.speed = CurrentGunResource.BulletSpeed
+	projectile.bulletDamage = CurrentGunResource.BulletDamage
 	
 	var direction = target_position - global_position + Vector2(rand_range(-CurrentGunResource.BulletAccuracy, CurrentGunResource.BulletAccuracy), rand_range(-CurrentGunResource.BulletAccuracy, CurrentGunResource.BulletAccuracy))
 	projectile.set_direction(direction)

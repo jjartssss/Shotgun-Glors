@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "EnemyHealth",
+"language": "GDScript",
+"path": "res://scripts/Components/EnemyHealth.gd"
+}, {
+"base": "Node2D",
 "class": "GameManager",
 "language": "GDScript",
 "path": "res://scenes/GameManager.gd"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://prefabs/bullets/Bullet.gd"
 } ]
 _global_script_class_icons={
+"EnemyHealth": "",
 "GameManager": "",
 "GunResource": "",
 "RegularBullet": ""
