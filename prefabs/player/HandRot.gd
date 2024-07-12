@@ -34,6 +34,8 @@ func SwitchGun(whatGun : int):
 			numOfBullets = first_gun.BulletCount
 			accuracy = first_gun.BulletAccuracy
 			isAutomatic = first_gun.AutoFire
+			# Change Gun Bullet User Interface by changing the global script player stats
+			
 		else:
 			print("First element is not a GunResource.")
 	else:
