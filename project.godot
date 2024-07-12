@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "RegularBullet",
 "language": "GDScript",
 "path": "res://prefabs/bullets/Bullet.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://scripts/States/States.gd"
 } ]
 _global_script_class_icons={
 "EnemyHealth": "",
 "GameManager": "",
 "GunResource": "",
-"RegularBullet": ""
+"RegularBullet": "",
+"State": ""
 }
 
 [application]
