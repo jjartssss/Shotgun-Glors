@@ -15,33 +15,61 @@ var numOfBullets = 1
 var accuracy = 25
 var isAutomatic = false
 var root
+var GameManager : GameManager
+
+var CurrentGunResource : GunResource
+
+var canShoot = true
+var shootTimer = 0
+var isReloading = false
+
 func _ready():
 	# Connect input event if necessary
 	set_process_input(true)
 	root = get_tree().current_scene
-#	for gun in gunResources:
-#		if gun is GunResource:
-#			print("Gun Name: ", gun.GunName, ", Damage: ", gun.BulletDamage)
+	GameManager = root.find_node("GameManager") # need for updating UI
+	SwitchGun(0)
 	
+	# For Testing
+	for gun in gunResources:
+		if gun is GunResource:
+			AddToGunCollection(gun)
+	
+	GameManager.UpdateGunCollection(CurrentGunResource.GunSprite, null)
+	
+func PickupGun():
+	if PlayerStats.GunsInHand.size() >= 2:
+		print("Already have 2 Guns")
+	else: 
+		print("Gun pickup")
+
+func AddToGunCollection(gun : GunResource):
+	PlayerStats.GunsInHand.append(gun)
+	print(gun.GunName + " is added to collection")
+	if PlayerStats.GunsInHand.size() >= 2:
+#		GameManager.UpdateGunCollection()
+		pass
+
 
 func SwitchGun(whatGun : int):
 	if gunResources.size() > whatGun:
 		var first_gun = gunResources[whatGun]
-		
+		GameManager.SwitchGuns(whatGun)
 		if first_gun is GunResource:
 			print("Selected Gun Name: ", first_gun.GunName)
-			print("Selected Gun Damage: ", first_gun.BulletDamage)
-			numOfBullets = first_gun.BulletCount
-			accuracy = first_gun.BulletAccuracy
-			isAutomatic = first_gun.AutoFire
+			# SET GUN RESOURCE TO CURRENT GUN
+			CurrentGunResource = first_gun
 			# Change Gun Bullet User Interface by changing the global script player stats
-			
+			UpdateBulletUI()
 		else:
 			print("First element is not a GunResource.")
 	else:
 		print("No guns available in the gunResources array.")
 
-
+func UpdateBulletUI():
+	PlayerStats.GunCurrentBullet = CurrentGunResource.BulletLeft
+	PlayerStats.GunMaxBullet = CurrentGunResource.BulletMax
+	GameManager.UpdateBulletUI()
 
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
@@ -61,30 +89,48 @@ func _process(delta):
 		scale.x = 1
 		scale.y = 1
 		rotation = angle
+	if !canShoot:
+		shootTimer += delta
+		print(str(shootTimer))
+		if shootTimer > CurrentGunResource.FireRate:
+			canShoot = true
+
+
 
 func _input(event):
 #	if event is InputEventMouseButton and event.pressed:
 #		if event.button_index == BUTTON_LEFT:
 #			for i in range(numOfBullets):
 #				fire_projectile(get_global_mouse_position())
-	if isAutomatic:
-		if Input.is_action_pressed("shoot"):
-			AddBulletEffects()
-			for i in range(numOfBullets):
-				fire_projectile(get_global_mouse_position())
-	else:
-		if event and Input.is_action_just_pressed("shoot"):
-			AddBulletEffects()
-			for i in range(numOfBullets):
-				fire_projectile(get_global_mouse_position())
+	if PlayerStats.GunCurrentBullet > 0 :
+		if CurrentGunResource.AutoFire :
+			if Input.is_action_pressed("shoot") and canShoot:
+				canShoot = false
+				shootTimer = 0
+				AddBulletEffects()
+				CurrentGunResource.BulletLeft -= 1
+				UpdateBulletUI()
+				for i in range(CurrentGunResource.BulletCount):
+					fire_projectile(get_global_mouse_position())
+		else:
+			if event and Input.is_action_just_pressed("shoot") and canShoot:
+				canShoot = false
+				shootTimer = 0
+				AddBulletEffects()
+				CurrentGunResource.BulletLeft -= 1
+				UpdateBulletUI()
+				for i in range(CurrentGunResource.BulletCount):
+					fire_projectile(get_global_mouse_position())
+	if Input.is_action_just_pressed("interact"):
+		PickupGun()
 
-
-	if event and Input.is_action_just_pressed("reload"):
+	if CurrentGunResource.GunName == "ShotGun" and Input.is_action_just_pressed("reload") and CurrentGunResource.BulletLeft < CurrentGunResource.BulletMax:
 		hand.play("reload")
+		isReloading = true
 	
-	if event and Input.is_action_just_pressed("weapon_one"):
+	if Input.is_action_just_pressed("weapon_one") and !isReloading:
 		SwitchGun(0)
-	if event and Input.is_action_just_pressed("weapon_two"):
+	if Input.is_action_just_pressed("weapon_two") and !isReloading:
 		SwitchGun(1)
 	
 
@@ -98,13 +144,13 @@ func AddBulletEffects():
 func fire_projectile(target_position):
 	hand.play("shoot")
 	
-	var projectile = ProjectileScene.instance()
+	var projectile : RegularBullet = ProjectileScene.instance()
 	root.add_child(projectile)
 	
 	projectile.global_position = bullet_pos.global_position
+	projectile.speed = CurrentGunResource.BulletSpeed
 	
-	
-	var direction = target_position - global_position + Vector2(rand_range(-accuracy, accuracy), rand_range(-accuracy, accuracy))
+	var direction = target_position - global_position + Vector2(rand_range(-CurrentGunResource.BulletAccuracy, CurrentGunResource.BulletAccuracy), rand_range(-CurrentGunResource.BulletAccuracy, CurrentGunResource.BulletAccuracy))
 	projectile.set_direction(direction)
 
 
@@ -112,5 +158,9 @@ func _on_Hand_animation_finished():
 	if hand.animation == "shoot":
 		hand.play("idle")
 	if hand.animation == "reload":
+		if PlayerStats.GunUsing == 0:
+			CurrentGunResource.BulletLeft = CurrentGunResource.BulletMax
+			UpdateBulletUI()
+		isReloading = false
 		hand.play("idle")
 	

@@ -1,14 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://prefabs/player/Roger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/sddefault.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/les-rayons-de-lumiere-fond_23-2147504702.jpg" type="Texture" id=4]
+[ext_resource path="res://scenes/GameManager.gd" type="Script" id=5]
+[ext_resource path="res://fonts/PixelGameFont.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://UI/Guns/ShotGun.png" type="Texture" id=7]
+[ext_resource path="res://assets/tempbullet.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=2]
+size = 51
+font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.974, 30.6385 )
 
 [node name="TestMap" type="Node2D"]
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource( 5 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 1920.0
@@ -22,6 +33,68 @@ margin_top = 42.0
 margin_right = 662.0
 margin_bottom = 192.0
 
+[node name="txtHealth" type="Label" parent="Control/CanvasLayer/BulletsAndHealth"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -75.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Health : 100"
+align = 1
+valign = 2
+
+[node name="txtBullet" type="Label" parent="Control/CanvasLayer/BulletsAndHealth"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 75.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Bullet: 4 / 4"
+align = 1
+valign = 2
+
+[node name="Guns" type="Panel" parent="Control/CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -598.0
+margin_top = 42.0
+margin_right = -158.0
+margin_bottom = 139.0
+
+[node name="g1" type="TextureRect" parent="Control/CanvasLayer/Guns"]
+margin_left = 16.0
+margin_top = 12.0
+margin_right = 220.0
+margin_bottom = 85.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="g2" type="TextureRect" parent="Control/CanvasLayer/Guns"]
+visible = false
+margin_left = 220.0
+margin_top = 12.0
+margin_right = 424.0
+margin_bottom = 85.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="GunOne" type="TextureRect" parent="Control/CanvasLayer/Guns"]
+margin_left = 32.0
+margin_top = 20.0
+margin_right = 200.0
+margin_bottom = 75.0
+texture = ExtResource( 7 )
+stretch_mode = 7
+
+[node name="GunTwo" type="TextureRect" parent="Control/CanvasLayer/Guns"]
+margin_left = 238.0
+margin_top = 20.0
+margin_right = 394.0
+margin_bottom = 75.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 7
+
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 2028, 96 )
 scale = Vector2( 3.45562, 5.30473 )
@@ -30,11 +103,17 @@ color = Color( 0.0745098, 0.0666667, 0.647059, 1 )
 energy = 1.05
 shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 0.486275 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sddefault" type="Sprite" parent="."]
 position = Vector2( 2026, 444 )
 scale = Vector2( 2.75833, 2.75833 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 1273, 990 )

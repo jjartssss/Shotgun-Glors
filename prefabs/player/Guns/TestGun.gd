@@ -9,6 +9,7 @@ export var BulletAccuracy : int
 export var BulletLeft : int
 export var BulletMax : int
 export var AutoFire : bool # if can shoot while holding
+export var FireRate : float
 
 export var GunSprite : Texture
 

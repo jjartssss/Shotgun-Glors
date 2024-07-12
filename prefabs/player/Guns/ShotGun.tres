@@ -1,14 +1,17 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://prefabs/player/Guns/TestGun.gd" type="Script" id=1]
+[ext_resource path="res://UI/Guns/ShotGun.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
 GunName = "ShotGun"
-BulletSpeed = 2500
+BulletSpeed = 3500
 BulletDamage = 4
 BulletCount = 4
 BulletAccuracy = 100
 BulletLeft = 4
 BulletMax = 4
 AutoFire = false
+FireRate = 1.0
+GunSprite = ExtResource( 2 )

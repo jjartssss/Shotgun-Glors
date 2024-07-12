@@ -137,7 +137,7 @@ position = Vector2( 0, -2 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "stand_walkback"
-frame = 4
+frame = 3
 playing = true
 offset = Vector2( -122, -280 )
 
@@ -145,7 +145,7 @@ offset = Vector2( -122, -280 )
 position = Vector2( -46, -172 )
 script = ExtResource( 76 )
 ProjectileScene = ExtResource( 77 )
-gunResources = [ ExtResource( 79 ), ExtResource( 78 ) ]
+gunResources = [ ExtResource( 78 ), ExtResource( 79 ) ]
 
 [node name="bulletPos" type="Position2D" parent="HandRot"]
 position = Vector2( 174, 32 )
@@ -155,7 +155,7 @@ position = Vector2( 45, 32 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 74, -4 )
 
