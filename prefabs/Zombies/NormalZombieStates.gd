@@ -2,7 +2,7 @@ extends Node2D
 
 var current_state: State
 var previous_state: State
-
+var target = null
 
 func _ready():
 	current_state = get_child(0) as State

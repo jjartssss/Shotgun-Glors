@@ -154,3 +154,27 @@ position = Vector2( 1354, 811 )
 
 [node name="TestEnemy4" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1890, 815 )
+
+[node name="TestEnemy5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2797, 807 )
+
+[node name="TestEnemy6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3113, 807 )
+
+[node name="TestEnemy7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3302, 811 )
+
+[node name="TestEnemy8" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3838, 815 )
+
+[node name="TestEnemy9" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4757, 807 )
+
+[node name="TestEnemy10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5073, 807 )
+
+[node name="TestEnemy11" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5262, 811 )
+
+[node name="TestEnemy12" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5798, 815 )

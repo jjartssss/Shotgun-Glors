@@ -2,6 +2,7 @@ extends Node
 class_name State
 
 onready var txtState = owner.find_node("txtState")
+onready var animSprite = owner.find_node("EnemySprite")
 
 func _ready():
 	set_physics_process(false)
