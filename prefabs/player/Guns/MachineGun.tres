@@ -13,5 +13,5 @@ BulletAccuracy = 25
 BulletLeft = 50
 BulletMax = 50
 AutoFire = true
-FireRate = 0.1
+FireRate = 0.05
 GunSprite = ExtResource( 2 )

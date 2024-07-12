@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 GunName = "ShotGun"
 BulletSpeed = 3500
-BulletDamage = 4
+BulletDamage = 25
 BulletCount = 4
 BulletAccuracy = 100
 BulletLeft = 4

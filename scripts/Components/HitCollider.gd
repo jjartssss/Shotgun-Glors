@@ -26,17 +26,19 @@ func _ready():
 
 func _on_HitCollider_area_entered(area):
 	if area.is_in_group("Bullet"):
-		var bloodInstance = bloodEffect.instance()
-		get_tree().current_scene.add_child(bloodInstance)
-		bloodInstance.global_position = area.global_position
-#		bloodInstance.rotation = global_position.angle_to_point(area.global_position)
-		if area.global_position.x > global_position.x:
-			bloodInstance.scale.x = 1
-		else:
-			bloodInstance.scale.x = -1
-		
-		animPlayer.play("hit_normal")
-		var bullet : RegularBullet = area
-		healthManager.DamageHealth(bullet.bulletDamage)
-		print("Damage taken " + str(bullet.bulletDamage))
-		area.queue_free()
+		if !area.alreadyHit:
+			area.alreadyHit = true
+			var bloodInstance = bloodEffect.instance()
+			get_tree().current_scene.add_child(bloodInstance)
+			bloodInstance.global_position = area.global_position
+	#		bloodInstance.rotation = global_position.angle_to_point(area.global_position)
+			if area.global_position.x > global_position.x:
+				bloodInstance.scale.x = 1
+			else:
+				bloodInstance.scale.x = -1
+			
+			animPlayer.play("hit_normal")
+			var bullet : RegularBullet = area
+			healthManager.DamageHealth(bullet.bulletDamage)
+			print("Damage taken " + str(bullet.bulletDamage))
+			area.queue_free()
