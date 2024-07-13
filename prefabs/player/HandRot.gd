@@ -24,6 +24,12 @@ var canShoot = true
 var shootTimer = 0
 var isReloading = false
 
+
+# Variables for dropping Gun
+var pickableGun = load("res://scripts/Components/Pickable.tscn")
+
+
+
 func _ready():
 	# Connect input event if necessary
 	set_process_input(true)
@@ -35,7 +41,7 @@ func _ready():
 	for gun in gunResources:
 		if gun is GunResource:
 			AddToGunCollection(gun)
-	
+	CurrentGunResource = PlayerStats.GunsInHand[0]
 	GameManager.UpdateGunCollection(CurrentGunResource.GunSprite, null)
 	
 func PickupGun():
@@ -48,13 +54,13 @@ func AddToGunCollection(gun : GunResource):
 	PlayerStats.GunsInHand.append(gun)
 	print(gun.GunName + " is added to collection")
 	if PlayerStats.GunsInHand.size() >= 2:
-#		GameManager.UpdateGunCollection()
+		GameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite)
 		pass
 
 
 func SwitchGun(whatGun : int):
-	if gunResources.size() > whatGun:
-		var first_gun = gunResources[whatGun]
+	if PlayerStats.GunsInHand.size() > whatGun:
+		var first_gun = PlayerStats.GunsInHand[whatGun]
 		GameManager.SwitchGuns(whatGun)
 		if first_gun is GunResource:
 			print("Selected Gun Name: ", first_gun.GunName)
@@ -138,6 +144,19 @@ func _input(event):
 	if Input.is_action_just_pressed("weapon_two") and !isReloading:
 		SwitchGun(1)
 	
+	if Input.is_action_just_pressed("drop_item") and CurrentGunResource.GunName != "ShotGun":
+		DropGun()
+
+func DropGun():
+	var droppedGun: Pickable = pickableGun.instance()
+	root.add_child(droppedGun)
+	droppedGun.position = global_position
+	droppedGun.whatGun = CurrentGunResource
+	droppedGun.gunSprite = CurrentGunResource.GunSprite
+	PlayerStats.GunsInHand.pop_back()
+	SwitchGun(0)
+	print(PlayerStats.GunsInHand)
+	GameManager.UpdateGunCollection(CurrentGunResource.GunSprite, null)
 
 func AddBulletEffects():
 	randomize()

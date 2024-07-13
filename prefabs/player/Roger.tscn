@@ -78,7 +78,7 @@
 [ext_resource path="res://prefabs/player/HandRot.gd" type="Script" id=76]
 [ext_resource path="res://prefabs/bullets/Bullet.tscn" type="PackedScene" id=77]
 [ext_resource path="res://prefabs/player/Guns/ShotGun.tres" type="Resource" id=78]
-[ext_resource path="res://prefabs/player/Guns/MachineGun.tres" type="Resource" id=79]
+[ext_resource path="res://prefabs/player/Guns/Rifle.tres" type="Resource" id=79]
 [ext_resource path="res://assets/roger/dodge/dodge_00.png" type="Texture" id=80]
 [ext_resource path="res://assets/roger/dodge/dodge_01.png" type="Texture" id=81]
 [ext_resource path="res://assets/roger/dodge/dodge_03.png" type="Texture" id=82]
@@ -213,8 +213,8 @@ anims/stop = SubResource( 5 )
 position = Vector2( 0, -2 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-animation = "dodge"
-frame = 9
+animation = "stand_idle"
+frame = 5
 offset = Vector2( -122, -280 )
 
 [node name="HandRot" type="Position2D" parent="."]
@@ -230,8 +230,8 @@ position = Vector2( 174, 32 )
 position = Vector2( 45, 32 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-animation = "reload"
-frame = 6
+animation = "idle"
+frame = 5
 playing = true
 offset = Vector2( 74, -4 )
 

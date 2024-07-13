@@ -18,6 +18,8 @@ func UpdateGunCollection(GunOne : Texture, GunTwo : Texture):
 		gun_one.texture = GunOne
 	if GunTwo != null:
 		gun_two.texture = GunTwo
+	else:
+		gun_two.texture = null
 
 func SwitchGuns(whatGun: int):
 	if whatGun == 0:

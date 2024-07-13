@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://prefabs/player/Guns/TestGun.gd" type="Script" id=1]
+[ext_resource path="res://UI/Guns/Rifle.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+GunName = "Rifle"
+BulletSpeed = 7000
+BulletDamage = 1
+BulletCount = 5
+BulletAccuracy = 120
+BulletLeft = 5000
+BulletMax = 5000
+AutoFire = true
+FireRate = 0.05
+GunSprite = ExtResource( 2 )
