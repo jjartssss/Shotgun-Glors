@@ -42,7 +42,7 @@ func _ready():
 		if gun is GunResource:
 			AddToGunCollection(gun)
 	CurrentGunResource = PlayerStats.GunsInHand[0]
-	GameManager.UpdateGunCollection(CurrentGunResource.GunSprite, null)
+	GameManager.UpdateGunCollection(CurrentGunResource.GunSprite, null, null)
 	
 func PickupGun():
 	if PlayerStats.GunsInHand.size() >= 2:
@@ -54,7 +54,7 @@ func AddToGunCollection(gun : GunResource):
 	PlayerStats.GunsInHand.append(gun)
 	print(gun.GunName + " is added to collection")
 	if PlayerStats.GunsInHand.size() >= 2:
-		GameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite)
+		GameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, null)
 		pass
 
 
@@ -141,6 +141,8 @@ func _input(event):
 		SwitchGun(0)
 	if Input.is_action_just_pressed("weapon_two") and !isReloading:
 		SwitchGun(1)
+	if Input.is_action_just_pressed("weapon_three") and !isReloading:
+		SwitchGun(2)
 	
 	if Input.is_action_just_pressed("drop_item") and CurrentGunResource.GunName != "ShotGun":
 		DropGun()
@@ -153,10 +155,22 @@ func DropGun():
 	droppedGun.gunSprite = CurrentGunResource.GunSprite
 	droppedGun.whatGun.BulletLeft = CurrentGunResource.BulletLeft
 	droppedGun.gun_sprite.texture = CurrentGunResource.GunSprite
-	PlayerStats.GunsInHand.pop_back()
+	# get dropped gun position in the gunslist
+#	for i in range(PlayerStats.GunsInHand.size()-1):
+#		if i == 2:
+#			PlayerStats.GunsInHand.pop_back()
+#			break
+#		if PlayerStats.GunsInHand[i].GunName == CurrentGunResource.GunName:
+#			PlayerStats.GunsInHand.remove(i)
+	PlayerStats.GunsInHand.erase(CurrentGunResource)
+#	PlayerStats.GunsInHand.pop_back()
 	SwitchGun(0)
 	print(PlayerStats.GunsInHand)
-	GameManager.UpdateGunCollection(CurrentGunResource.GunSprite, null)
+	if PlayerStats.GunsInHand.size() == 2:
+		GameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, null)
+	elif PlayerStats.GunsInHand.size() > 2:
+		GameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, PlayerStats.GunsInHand[2].GunSprite)
+	 
 
 func AddBulletEffects():
 	randomize()

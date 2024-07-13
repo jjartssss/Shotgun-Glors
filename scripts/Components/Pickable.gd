@@ -22,7 +22,7 @@ func _input(event):
 	if canPickup:
 		if Input.is_action_just_pressed("interact"):
 			print("working ba? " + str(PlayerStats.GunsInHand.size()))
-			if PlayerStats.GunsInHand.size() < 2:
+			if PlayerStats.GunsInHand.size() < 3:
 				AddToGunCollection(whatGun)
 			else:
 				print("Already has two guns")
@@ -39,5 +39,9 @@ func AddToGunCollection(gun : GunResource):
 	print(gun.GunName + " is added to collection")
 	var root = get_tree().current_scene
 	gameManager = root.find_node("GameManager")
-	gameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite)
+	if PlayerStats.GunsInHand.size() == 2:
+		gameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, null)
+	elif PlayerStats.GunsInHand.size() > 2:
+		gameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, PlayerStats.GunsInHand[2].GunSprite)
+	 
 	queue_free()

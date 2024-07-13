@@ -16,13 +16,18 @@ onready var g_3 = $"../Control/CanvasLayer/Guns/g3"
 func UpdateBulletUI():
 	txt_bullet.text = "Bullet: " + str(PlayerStats.GunCurrentBullet) + " / " + str(PlayerStats.GunMaxBullet)
 
-func UpdateGunCollection(GunOne : Texture, GunTwo : Texture):
+func UpdateGunCollection(GunOne : Texture, GunTwo : Texture, GunThree : Texture):
+	
 	if GunOne != null:
 		gun_one.texture = GunOne
 	if GunTwo != null:
 		gun_two.texture = GunTwo
 	else:
 		gun_two.texture = null
+	if GunThree != null:
+		gun_three.texture = GunThree
+	else:
+		gun_three.texture = null
 
 func SwitchGuns(whatGun: int):
 	OffAllGunSelected()
