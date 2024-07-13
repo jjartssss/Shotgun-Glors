@@ -10,6 +10,7 @@ onready var bullet_pos = $bulletPos
 
 # Gun Resource
 export(Array, Resource) var gunResources: Array
+onready var animation_player = $"../AnimationPlayer"
 
 var numOfBullets = 1
 var accuracy = 25
@@ -109,6 +110,8 @@ func _input(event):
 				AddBulletEffects()
 				CurrentGunResource.BulletLeft -= 1
 				UpdateBulletUI()
+				animation_player.stop()
+				isReloading = false
 				for i in range(CurrentGunResource.BulletCount):
 					fire_projectile(get_global_mouse_position())
 		else:
@@ -118,13 +121,16 @@ func _input(event):
 				AddBulletEffects()
 				CurrentGunResource.BulletLeft -= 1
 				UpdateBulletUI()
+				animation_player.stop()
+				isReloading = false
 				for i in range(CurrentGunResource.BulletCount):
 					fire_projectile(get_global_mouse_position())
 	if Input.is_action_just_pressed("interact"):
 		PickupGun()
 
 	if CurrentGunResource.GunName == "ShotGun" and Input.is_action_just_pressed("reload") and CurrentGunResource.BulletLeft < CurrentGunResource.BulletMax:
-		hand.play("reload")
+#		hand.play("reload")
+		animation_player.play("reload")
 		isReloading = true
 	
 	if Input.is_action_just_pressed("weapon_one") and !isReloading:
@@ -157,10 +163,26 @@ func fire_projectile(target_position):
 func _on_Hand_animation_finished():
 	if hand.animation == "shoot":
 		hand.play("idle")
-	if hand.animation == "reload":
-		if PlayerStats.GunUsing == 0:
-			CurrentGunResource.BulletLeft = CurrentGunResource.BulletMax
-			UpdateBulletUI()
-		isReloading = false
-		hand.play("idle")
+#	if hand.animation == "reload":
+#		if PlayerStats.GunUsing == 0:
+#			CurrentGunResource.BulletLeft = CurrentGunResource.BulletMax
+#			UpdateBulletUI()
+#		isReloading = false
+#		hand.play("idle")
 	
+
+
+func AddOneBullet():
+	if CurrentGunResource.BulletLeft < CurrentGunResource.BulletMax:
+		CurrentGunResource.BulletLeft += 1
+		UpdateBulletUI()
+	else:
+		StopReloading()
+		isReloading = false
+
+
+func StopReloading():
+	if animation_player.is_playing():
+		animation_player.play("stop")
+		animation_player.stop()
+		print("animation stop")

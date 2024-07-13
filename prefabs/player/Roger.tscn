@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=95 format=2]
 
 [ext_resource path="res://assets/roger/roger_idle/roger_03.png" type="Texture" id=1]
 [ext_resource path="res://assets/roger/roger_idle/roger_04.png" type="Texture" id=2]
@@ -79,9 +79,81 @@
 [ext_resource path="res://prefabs/bullets/Bullet.tscn" type="PackedScene" id=77]
 [ext_resource path="res://prefabs/player/Guns/ShotGun.tres" type="Resource" id=78]
 [ext_resource path="res://prefabs/player/Guns/MachineGun.tres" type="Resource" id=79]
+[ext_resource path="res://assets/roger/dodge/dodge_00.png" type="Texture" id=80]
+[ext_resource path="res://assets/roger/dodge/dodge_01.png" type="Texture" id=81]
+[ext_resource path="res://assets/roger/dodge/dodge_03.png" type="Texture" id=82]
+[ext_resource path="res://assets/roger/dodge/dodge_02.png" type="Texture" id=83]
+[ext_resource path="res://assets/roger/dodge/dodge_04.png" type="Texture" id=84]
+[ext_resource path="res://assets/roger/dodge/dodge_05.png" type="Texture" id=85]
+[ext_resource path="res://assets/roger/dodge/dodge_06.png" type="Texture" id=86]
+[ext_resource path="res://assets/roger/dodge/dodge_07.png" type="Texture" id=87]
+[ext_resource path="res://assets/roger/dodge/dodge_08.png" type="Texture" id=88]
+[ext_resource path="res://assets/roger/dodge/dodge_09.png" type="Texture" id=89]
+
+[sub_resource type="Animation" id=4]
+resource_name = "reload"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("HandRot/Hand:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "reload" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HandRot/Hand:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 2,
+"values": [ 7, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("HandRot")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 0.9, 1.3, 1.7, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "AddOneBullet"
+}, {
+"args": [  ],
+"method": "AddOneBullet"
+}, {
+"args": [  ],
+"method": "AddOneBullet"
+}, {
+"args": [  ],
+"method": "AddOneBullet"
+}, {
+"args": [  ],
+"method": "StopReloading"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "stop"
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 80 ), ExtResource( 81 ), ExtResource( 83 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ) ],
+"loop": true,
+"name": "dodge",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "stand_idle",
@@ -133,13 +205,16 @@ extents = Vector2( 49, 133 )
 modulate = Color( 0.513726, 0.482353, 0.639216, 1 )
 script = ExtResource( 75 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/reload = SubResource( 4 )
+anims/stop = SubResource( 5 )
+
 [node name="Player" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -2 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-animation = "stand_idle"
-frame = 6
-playing = true
+animation = "dodge"
+frame = 9
 offset = Vector2( -122, -280 )
 
 [node name="HandRot" type="Position2D" parent="."]
@@ -155,8 +230,8 @@ position = Vector2( 174, 32 )
 position = Vector2( 45, 32 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-animation = "idle"
-frame = 2
+animation = "reload"
+frame = 6
 playing = true
 offset = Vector2( 74, -4 )
 

@@ -20,9 +20,9 @@ func _process(delta):
 		direction.y = 0  # Restrict movement to the horizontal axis
 
 	if direction.x < 0:
-		enemy_sprite.flip_h = true
-	else:
 		enemy_sprite.flip_h = false
+	else:
+		enemy_sprite.flip_h = true
 
 func _physics_process(delta):
 	if canMove:
