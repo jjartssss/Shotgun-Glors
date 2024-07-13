@@ -41,7 +41,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Press 'E' to pickup"
 
 [node name="GunSprite" type="Sprite" parent="."]
-position = Vector2( 0, -98.0143 )
+position = Vector2( 0, -64.1185 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 

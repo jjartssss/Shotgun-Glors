@@ -131,8 +131,6 @@ func _input(event):
 				isReloading = false
 				for i in range(CurrentGunResource.BulletCount):
 					fire_projectile(get_global_mouse_position())
-	if Input.is_action_just_pressed("interact"):
-		PickupGun()
 
 	if CurrentGunResource.GunName == "ShotGun" and Input.is_action_just_pressed("reload") and CurrentGunResource.BulletLeft < CurrentGunResource.BulletMax:
 #		hand.play("reload")
@@ -153,6 +151,8 @@ func DropGun():
 	droppedGun.position = global_position
 	droppedGun.whatGun = CurrentGunResource
 	droppedGun.gunSprite = CurrentGunResource.GunSprite
+	droppedGun.whatGun.BulletLeft = CurrentGunResource.BulletLeft
+	droppedGun.gun_sprite.texture = CurrentGunResource.GunSprite
 	PlayerStats.GunsInHand.pop_back()
 	SwitchGun(0)
 	print(PlayerStats.GunsInHand)
