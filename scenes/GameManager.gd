@@ -6,8 +6,11 @@ onready var txt_bullet = $"../Control/CanvasLayer/BulletsAndHealth/txtBullet"
 
 onready var gun_one = $"../Control/CanvasLayer/Guns/GunOne"
 onready var gun_two = $"../Control/CanvasLayer/Guns/GunTwo"
+onready var gun_three = $"../Control/CanvasLayer/Guns/GunThree"
+
 onready var g_1 = $"../Control/CanvasLayer/Guns/g1"
 onready var g_2 = $"../Control/CanvasLayer/Guns/g2"
+onready var g_3 = $"../Control/CanvasLayer/Guns/g3"
 
 
 func UpdateBulletUI():
@@ -22,9 +25,16 @@ func UpdateGunCollection(GunOne : Texture, GunTwo : Texture):
 		gun_two.texture = null
 
 func SwitchGuns(whatGun: int):
-	if whatGun == 0:
-		g_1.visible = true
-		g_2.visible = false
-	else:
-		g_1.visible = false
-		g_2.visible = true
+	OffAllGunSelected()
+	match(whatGun):
+		0:
+			g_1.visible = true
+		1:
+			g_2.visible = true
+		2:
+			g_3.visible = true
+
+func OffAllGunSelected():
+	g_1.visible = false
+	g_2.visible = false
+	g_3.visible = false
