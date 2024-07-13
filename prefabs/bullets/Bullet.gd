@@ -22,5 +22,5 @@ func _on_Timer_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("Enemy"):
+	if body.is_in_group("Enemy") or body.is_in_group("Destructible"):
 		queue_free()
