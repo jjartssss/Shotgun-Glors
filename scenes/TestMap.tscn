@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://prefabs/player/Roger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -13,6 +13,51 @@
 [ext_resource path="res://UI/Guns/Rifle.png" type="Texture" id=11]
 [ext_resource path="res://prefabs/player/Guns/MachineGun.tres" type="Resource" id=12]
 [ext_resource path="res://prefabs/Props/Box.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/Props/temp-designprops.png" type="Texture" id=14]
+
+[sub_resource type="TileSet" id=3]
+0/name = "temp-designprops.png 0"
+0/texture = ExtResource( 14 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 320, 352, 1248, 1312 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "temp-designprops.png 1"
+1/texture = ExtResource( 14 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 2176, 1440, 288, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "temp-designprops.png 2"
+2/texture = ExtResource( 14 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 1792, -96, 192, 1760 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
 
 [sub_resource type="DynamicFont" id=2]
 size = 51
@@ -25,6 +70,12 @@ extents = Vector2( 31.974, 30.6385 )
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource( 5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color( 0.584314, 0.541176, 0.541176, 1 )
+tile_set = SubResource( 3 )
+format = 1
+tile_data = PoolIntArray( -983013, 2, 0, -982986, 2, 0, -982968, 2, 0, -982929, 2, 0, -524279, 0, 0, -524235, 0, 0, -524174, 0, 0, -524167, 0, 0 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 1920.0
@@ -119,6 +170,7 @@ expand = true
 stretch_mode = 7
 
 [node name="Light2D" type="Light2D" parent="."]
+visible = false
 position = Vector2( 2028, 96 )
 scale = Vector2( 3.45562, 5.30473 )
 texture = ExtResource( 4 )
@@ -131,6 +183,7 @@ __meta__ = {
 }
 
 [node name="Sddefault" type="Sprite" parent="."]
+visible = false
 position = Vector2( 2026, 444 )
 scale = Vector2( 2.75833, 2.75833 )
 texture = ExtResource( 3 )

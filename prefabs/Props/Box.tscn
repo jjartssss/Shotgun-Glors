@@ -54,7 +54,6 @@ loots = [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Destructible"]
 position = Vector2( 0, -10 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
 [node name="EnemyHealth" parent="." instance=ExtResource( 2 )]

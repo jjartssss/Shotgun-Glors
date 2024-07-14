@@ -159,13 +159,7 @@ func DropGun():
 	PlayerStats.GunsInHand.erase(CurrentGunResource)
 	SwitchGun(0)
 	print(PlayerStats.GunsInHand)
-	if PlayerStats.GunsInHand.size() == 1:
-		GameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite, null, null)
-	elif PlayerStats.GunsInHand.size() == 2:
-		GameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, null)
-	elif PlayerStats.GunsInHand.size() > 2:
-		GameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, PlayerStats.GunsInHand[2].GunSprite)
-	 
+	GameManager.UpdateWeaponUI()
 
 func AddBulletEffects():
 	randomize()
@@ -191,13 +185,6 @@ func fire_projectile(target_position):
 func _on_Hand_animation_finished():
 	if hand.animation == "shoot":
 		hand.play("idle")
-#	if hand.animation == "reload":
-#		if PlayerStats.GunUsing == 0:
-#			CurrentGunResource.BulletLeft = CurrentGunResource.BulletMax
-#			UpdateBulletUI()
-#		isReloading = false
-#		hand.play("idle")
-	
 
 
 func AddOneBullet():

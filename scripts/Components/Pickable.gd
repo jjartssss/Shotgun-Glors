@@ -39,9 +39,5 @@ func AddToGunCollection(gun : GunResource):
 	print(gun.GunName + " is added to collection")
 	var root = get_tree().current_scene
 	gameManager = root.find_node("GameManager")
-	if PlayerStats.GunsInHand.size() == 2:
-		gameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, null)
-	elif PlayerStats.GunsInHand.size() > 2:
-		gameManager.UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, PlayerStats.GunsInHand[2].GunSprite)
-	 
+	gameManager.UpdateWeaponUI()
 	queue_free()

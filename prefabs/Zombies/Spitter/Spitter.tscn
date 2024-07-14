@@ -1,0 +1,95 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://fonts/PixelGameFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_0.png" type="Texture" id=2]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_01.png" type="Texture" id=3]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_06.png" type="Texture" id=4]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_13.png" type="Texture" id=5]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_05.png" type="Texture" id=6]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_5.png" type="Texture" id=7]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_15.png" type="Texture" id=8]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_4.png" type="Texture" id=9]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_03.png" type="Texture" id=10]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_10.png" type="Texture" id=11]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_00.png" type="Texture" id=12]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_05.png" type="Texture" id=13]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_6.png" type="Texture" id=14]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_04.png" type="Texture" id=15]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_12.png" type="Texture" id=16]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_2.png" type="Texture" id=17]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_09.png" type="Texture" id=18]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_14.png" type="Texture" id=19]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_7.png" type="Texture" id=20]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_3.png" type="Texture" id=21]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_1.png" type="Texture" id=22]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_11.png" type="Texture" id=23]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_07.png" type="Texture" id=24]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_04.png" type="Texture" id=25]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_06.png" type="Texture" id=26]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_08.png" type="Texture" id=27]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_07.png" type="Texture" id=28]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_00.png" type="Texture" id=29]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_08.png" type="Texture" id=30]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_02.png" type="Texture" id=31]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_01.png" type="Texture" id=32]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_09.png" type="Texture" id=33]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_11.png" type="Texture" id=34]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_03.png" type="Texture" id=35]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_10.png" type="Texture" id=36]
+[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_02.png" type="Texture" id=37]
+
+[sub_resource type="DynamicFont" id=1]
+size = 52
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 49, 155 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 3 ), ExtResource( 31 ), ExtResource( 35 ), ExtResource( 25 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 18 ), ExtResource( 36 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "attackm1",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 11 ), ExtResource( 34 ), ExtResource( 16 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
+} ]
+
+[node name="Spitter" type="KinematicBody2D"]
+
+[node name="txtState" type="Label" parent="."]
+margin_left = -150.0
+margin_top = -405.0
+margin_right = 147.0
+margin_bottom = -338.0
+rect_pivot_offset = Vector2( 87, 34 )
+custom_fonts/font = SubResource( 1 )
+text = "state"
+align = 1
+valign = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color( 0.890196, 0.14902, 0.14902, 1 )
+position = Vector2( 0, -159 )
+shape = SubResource( 2 )
+
+[node name="EnemySprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -159 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 3 )
+animation = "New Anim"
+playing = true
+flip_h = true

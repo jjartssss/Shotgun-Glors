@@ -29,6 +29,15 @@ func UpdateGunCollection(GunOne : Texture, GunTwo : Texture, GunThree : Texture)
 	else:
 		gun_three.texture = null
 
+func UpdateWeaponUI():
+	if PlayerStats.GunsInHand.size() == 1:
+		UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite, null, null)
+	elif PlayerStats.GunsInHand.size() == 2:
+		UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, null)
+	elif PlayerStats.GunsInHand.size() > 2:
+		UpdateGunCollection(PlayerStats.GunsInHand[0].GunSprite,PlayerStats.GunsInHand[1].GunSprite, PlayerStats.GunsInHand[2].GunSprite)
+
+
 func SwitchGuns(whatGun: int):
 	OffAllGunSelected()
 	match(whatGun):
