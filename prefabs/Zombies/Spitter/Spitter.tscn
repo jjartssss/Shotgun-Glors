@@ -1,42 +1,63 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://fonts/PixelGameFont.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_0.png" type="Texture" id=2]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_01.png" type="Texture" id=3]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_06.png" type="Texture" id=4]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_13.png" type="Texture" id=5]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_05.png" type="Texture" id=6]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_5.png" type="Texture" id=7]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_15.png" type="Texture" id=8]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_4.png" type="Texture" id=9]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_03.png" type="Texture" id=10]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_10.png" type="Texture" id=11]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_00.png" type="Texture" id=12]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_05.png" type="Texture" id=13]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_6.png" type="Texture" id=14]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_04.png" type="Texture" id=15]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_12.png" type="Texture" id=16]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_2.png" type="Texture" id=17]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_09.png" type="Texture" id=18]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_14.png" type="Texture" id=19]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_7.png" type="Texture" id=20]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_3.png" type="Texture" id=21]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/idle1/z1-stand_idle_1.png" type="Texture" id=22]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_11.png" type="Texture" id=23]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_07.png" type="Texture" id=24]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_04.png" type="Texture" id=25]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_06.png" type="Texture" id=26]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_08.png" type="Texture" id=27]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_07.png" type="Texture" id=28]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_00.png" type="Texture" id=29]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_08.png" type="Texture" id=30]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_02.png" type="Texture" id=31]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_01.png" type="Texture" id=32]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_09.png" type="Texture" id=33]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_11.png" type="Texture" id=34]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_03.png" type="Texture" id=35]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/attack/attack_10.png" type="Texture" id=36]
-[ext_resource path="res://assets/Zombies/RegularZombies/z1/walk/z1-stand_walk_02.png" type="Texture" id=37]
+[ext_resource path="res://assets/Zombies/Spitter/idle/spitter-idle_7.png" type="Texture" id=2]
+[ext_resource path="res://assets/Zombies/Spitter/idle/spitter-idle_4.png" type="Texture" id=3]
+[ext_resource path="res://assets/Zombies/Spitter/idle/spitter-idle_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Zombies/Spitter/run/run_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/Zombies/Spitter/run/run_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/Zombies/Spitter/idle/spitter-idle_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/Zombies/Spitter/run/run_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/Zombies/Spitter/idle/spitter-idle_6.png" type="Texture" id=9]
+[ext_resource path="res://assets/Zombies/Spitter/run/run_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/Zombies/Spitter/run/run_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_19.png" type="Texture" id=12]
+[ext_resource path="res://assets/Zombies/Spitter/idle/spitter-idle_5.png" type="Texture" id=13]
+[ext_resource path="res://assets/Zombies/Spitter/idle/spitter-idle_0.png" type="Texture" id=14]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_04.png" type="Texture" id=15]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_20.png" type="Texture" id=16]
+[ext_resource path="res://assets/Zombies/Spitter/idle/spitter-idle_2.png" type="Texture" id=17]
+[ext_resource path="res://scripts/Components/HitCollider.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_21.png" type="Texture" id=19]
+[ext_resource path="res://scripts/Components/EnemyHealth.gd" type="Script" id=20]
+[ext_resource path="res://scripts/States/Zombie/Idle.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scripts/States/Zombie/ChaseNormal.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scripts/Components/Attack_m1.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_18.png" type="Texture" id=24]
+[ext_resource path="res://prefabs/Zombies/NormalZombieStates.gd" type="Script" id=25]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_09.png" type="Texture" id=26]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_10.png" type="Texture" id=27]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_13.png" type="Texture" id=28]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_10.png" type="Texture" id=29]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_06.png" type="Texture" id=30]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_03.png" type="Texture" id=31]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_11.png" type="Texture" id=32]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_08.png" type="Texture" id=33]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_00.png" type="Texture" id=34]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_05.png" type="Texture" id=35]
+[ext_resource path="res://assets/Zombies/Spitter/run/run_5.png" type="Texture" id=36]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_02.png" type="Texture" id=37]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_07.png" type="Texture" id=38]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_11.png" type="Texture" id=39]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_14.png" type="Texture" id=40]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_01.png" type="Texture" id=41]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_15.png" type="Texture" id=42]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_02.png" type="Texture" id=43]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_03.png" type="Texture" id=44]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_04.png" type="Texture" id=45]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_07.png" type="Texture" id=46]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_01.png" type="Texture" id=47]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_05.png" type="Texture" id=48]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_06.png" type="Texture" id=49]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_09.png" type="Texture" id=50]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_00.png" type="Texture" id=51]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_12.png" type="Texture" id=52]
+[ext_resource path="res://assets/Zombies/Spitter/walk/walk_08.png" type="Texture" id=53]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_16.png" type="Texture" id=54]
+[ext_resource path="res://assets/Zombies/Spitter/attack1/attack1_17.png" type="Texture" id=55]
+[ext_resource path="res://prefabs/Zombies/Spitter/Spitter.gd" type="Script" id=56]
+[ext_resource path="res://scripts/Components/Attack_m1.gd" type="Script" id=57]
+[ext_resource path="res://assets/Zombies/Spitter/projectile/Sprite-0001.png" type="Texture" id=58]
 
 [sub_resource type="DynamicFont" id=1]
 size = 52
@@ -47,34 +68,267 @@ extents = Vector2( 49, 155 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "New Anim",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 29 ), ExtResource( 3 ), ExtResource( 31 ), ExtResource( 35 ), ExtResource( 25 ), ExtResource( 13 ), ExtResource( 4 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 18 ), ExtResource( 36 ), ExtResource( 23 ) ],
-"loop": true,
+"frames": [ ExtResource( 51 ), ExtResource( 47 ), ExtResource( 37 ), ExtResource( 31 ), ExtResource( 15 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 38 ), ExtResource( 33 ), ExtResource( 50 ), ExtResource( 29 ), ExtResource( 39 ), ExtResource( 52 ), ExtResource( 28 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 24 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 19 ) ],
+"loop": false,
 "name": "attackm1",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 14 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 7 ), ExtResource( 17 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 11 ), ExtResource( 34 ), ExtResource( 16 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 41 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 46 ), ExtResource( 53 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "walk",
 "speed": 12.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 55, 156 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "attackm1"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("EnemySprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "attackm1" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EnemySprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 21, 21, 21, 21, 21, 15, 16, 17, 18, 19, 20, 21, 20, 19, 18, 17, 16 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("extras:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.2, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "New Anim", "projectile", "New Anim" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("extras:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 3, 4, 1, 2, 3, 4 ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("StateMachine/Attack_m1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.5, 1.9, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "ShootProjectile"
+}, {
+"args": [  ],
+"method": "ShootProjectile"
+}, {
+"args": [  ],
+"method": "AttackFinished"
+} ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "def"
+
+[sub_resource type="Animation" id=5]
+resource_name = "hit_normal"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("EnemySprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "attackm1"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("EnemySprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "attackm1" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EnemySprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 21, 21, 21, 21, 21, 15, 16, 17, 18, 19, 20, 21, 20, 19, 18, 17, 16 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("extras:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.2, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "New Anim", "projectile", "New Anim" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("extras:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 3, 4, 1, 2, 3, 4 ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("StateMachine/Attack_m1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.5, 1.9, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "ShootProjectile"
+}, {
+"args": [  ],
+"method": "ShootProjectile"
+}, {
+"args": [  ],
+"method": "AttackFinished"
+} ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "def"
+
+[sub_resource type="Animation" id=18]
+resource_name = "hit_normal"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("EnemySprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 512, 86 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 101, 125.5 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 58 )
+region = Rect2( 0, 0, 64, 256 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 58 )
+region = Rect2( 64, 0, 64, 256 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 58 )
+region = Rect2( 128, 0, 64, 256 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 58 )
+region = Rect2( 192, 0, 64, 256 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 58 )
+region = Rect2( 256, 0, 64, 256 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "projectile",
+"speed": 12.0
+} ]
+
 [node name="Spitter" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 56 )
+attackRate = 3.0
 
 [node name="txtState" type="Label" parent="."]
 margin_left = -150.0
-margin_top = -405.0
+margin_top = -473.0
 margin_right = 147.0
-margin_bottom = -338.0
+margin_bottom = -406.0
 rect_pivot_offset = Vector2( 87, 34 )
 custom_fonts/font = SubResource( 1 )
 text = "state"
@@ -87,9 +341,82 @@ position = Vector2( 0, -159 )
 shape = SubResource( 2 )
 
 [node name="EnemySprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -159 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 0, -200 )
 frames = SubResource( 3 )
+animation = "attackm1"
+
+[node name="EnemyHealth" type="Node2D" parent="."]
+script = ExtResource( 20 )
+healthMax = 300
+healthCurrent = 300
+
+[node name="HitCollider" parent="." instance=ExtResource( 18 )]
+collision_layer = 2
+collision_mask = 2
+hitCollisionPath = NodePath("CollisionShape2D")
+healthPath = NodePath("../EnemyHealth")
+animationPath = NodePath("../AnimationPlayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitCollider"]
+position = Vector2( 0, -159 )
+shape = SubResource( 4 )
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource( 25 )
+
+[node name="Idle" parent="StateMachine" instance=ExtResource( 21 )]
+
+[node name="ChaseNormal" parent="StateMachine" instance=ExtResource( 22 )]
+
+[node name="Attack_m1" parent="StateMachine" instance=ExtResource( 23 )]
+script = ExtResource( 57 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attackm1 = SubResource( 8 )
+anims/def = SubResource( 15 )
+anims/hit_normal = SubResource( 5 )
+
+[node name="attackAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attackm1 = SubResource( 16 )
+anims/def = SubResource( 17 )
+anims/hit_normal = SubResource( 18 )
+
+[node name="ChaseDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseDetect"]
+position = Vector2( 0, -148 )
+shape = SubResource( 6 )
+
+[node name="AttackDetectM1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetectM1"]
+modulate = Color( 1, 0.121569, 0.054902, 1 )
+position = Vector2( 0, -137.5 )
+shape = SubResource( 7 )
+
+[node name="rayCastLeft" type="RayCast2D" parent="."]
+position = Vector2( 0, -148 )
+enabled = true
+cast_to = Vector2( -1300, -2 )
+
+[node name="rayCastRight" type="RayCast2D" parent="."]
+position = Vector2( 0, -148 )
+enabled = true
+cast_to = Vector2( 1300, -2 )
+
+[node name="attackRayCastLeft" type="RayCast2D" parent="."]
+position = Vector2( 0, -119 )
+enabled = true
+cast_to = Vector2( -800, -2 )
+
+[node name="attackRayCastRight" type="RayCast2D" parent="."]
+position = Vector2( 0, -119 )
+enabled = true
+cast_to = Vector2( 800, -2 )
+
+[node name="extras" type="AnimatedSprite" parent="."]
+position = Vector2( -17, -386 )
+frames = SubResource( 14 )
 animation = "New Anim"
-playing = true
-flip_h = true
+
+[connection signal="animation_finished" from="EnemySprite" to="StateMachine/Attack_m1" method="_on_EnemySprite_animation_finished"]

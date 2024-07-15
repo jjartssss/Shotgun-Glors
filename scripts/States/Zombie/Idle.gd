@@ -48,5 +48,6 @@ func transition():
 		get_parent().change_state("ChaseNormal")
 		get_parent().target = target
 		get_parent().get_parent().targetPlayer = target
+		parentEnemy.attackCooldown = 0
 	else:
-		parentEnemy.attackCooldown += 0.1
+		parentEnemy.attackCooldown += 0.05

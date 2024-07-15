@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://prefabs/player/Roger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://prefabs/player/Guns/MachineGun.tres" type="Resource" id=12]
 [ext_resource path="res://prefabs/Props/Box.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/Props/temp-designprops.png" type="Texture" id=14]
+[ext_resource path="res://prefabs/Zombies/Spitter/Spitter.tscn" type="PackedScene" id=15]
 
 [sub_resource type="TileSet" id=3]
 0/name = "temp-designprops.png 0"
@@ -191,7 +192,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Ground"]]
 position = Vector2( 1273, 990 )
 scale = Vector2( 27.4345, 7.10823 )
 __meta__ = {
@@ -214,6 +215,7 @@ position = Vector2( 235, 604 )
 [node name="Camera2D" type="Camera2D" parent="Roger"]
 offset = Vector2( 0, -200 )
 current = true
+zoom = Vector2( 1.2, 1.2 )
 limit_left = -100
 smoothing_enabled = true
 smoothing_speed = 25.0
@@ -231,3 +233,51 @@ gunSprite = ExtResource( 11 )
 
 [node name="Box" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1026, 790 )
+
+[node name="Spitter" parent="." instance=ExtResource( 15 )]
+position = Vector2( 4090, 790 )
+
+[node name="Spitter2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 5771, 792 )
+
+[node name="TestEnemy3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6813, 783 )
+
+[node name="TestEnemy4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 7805, 783 )
+
+[node name="TestEnemy5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6478, 783 )
+
+[node name="TestEnemy6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5681, 783 )
+
+[node name="TestEnemy7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6673, 783 )
+
+[node name="TestEnemy8" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3354, 794 )
+
+[node name="TestEnemy15" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3697, 797 )
+
+[node name="TestEnemy16" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3844, 807 )
+
+[node name="TestEnemy9" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8444, 791 )
+
+[node name="TestEnemy10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 9436, 791 )
+
+[node name="TestEnemy11" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8109, 791 )
+
+[node name="TestEnemy12" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8444, 791 )
+
+[node name="TestEnemy13" parent="." instance=ExtResource( 9 )]
+position = Vector2( 9436, 791 )
+
+[node name="TestEnemy14" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8109, 791 )
