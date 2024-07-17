@@ -7,8 +7,13 @@ var player_detected = false
 var target = null
 var parentEnemy
 
+# Vars for Escape
+export(NodePath) var healthPath
+var healthManager : EnemyHealth
+
 func _ready():
 	parentEnemy = get_parent().get_parent()
+	healthManager = get_node(healthPath)
 
 func enter():
 	.enter()
@@ -43,6 +48,8 @@ func transition():
 			player_detected = false
 	else:
 		player_detected = false
+		
+	CheckHealth()
 	
 	if parentEnemy.attackCooldown >= parentEnemy.attackRate and player_detected:
 		get_parent().change_state("ChaseNormal")
@@ -51,3 +58,7 @@ func transition():
 		parentEnemy.attackCooldown = 0
 	else:
 		parentEnemy.attackCooldown += 0.05
+
+func CheckHealth():
+	if healthManager.healthCurrent <= (healthManager.healthMax / 2):
+		get_parent().change_state("Escape")

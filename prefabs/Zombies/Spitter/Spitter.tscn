@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://fonts/PixelGameFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Zombies/Spitter/idle/spitter-idle_7.png" type="Texture" id=2]
@@ -58,6 +58,7 @@
 [ext_resource path="res://prefabs/Zombies/Spitter/Spitter.gd" type="Script" id=56]
 [ext_resource path="res://scripts/Components/Attack_m1.gd" type="Script" id=57]
 [ext_resource path="res://assets/Zombies/Spitter/projectile/Sprite-0001.png" type="Texture" id=58]
+[ext_resource path="res://prefabs/Zombies/Spitter/Escape.gd" type="Script" id=59]
 
 [sub_resource type="DynamicFont" id=1]
 size = 52
@@ -319,7 +320,7 @@ animations = [ {
 } ]
 
 [node name="Spitter" type="KinematicBody2D"]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 script = ExtResource( 56 )
 attackRate = 3.0
@@ -352,7 +353,7 @@ healthCurrent = 300
 
 [node name="HitCollider" parent="." instance=ExtResource( 18 )]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 3
 hitCollisionPath = NodePath("CollisionShape2D")
 healthPath = NodePath("../EnemyHealth")
 animationPath = NodePath("../AnimationPlayer")
@@ -365,11 +366,16 @@ shape = SubResource( 4 )
 script = ExtResource( 25 )
 
 [node name="Idle" parent="StateMachine" instance=ExtResource( 21 )]
+healthPath = NodePath("../../EnemyHealth")
 
 [node name="ChaseNormal" parent="StateMachine" instance=ExtResource( 22 )]
 
 [node name="Attack_m1" parent="StateMachine" instance=ExtResource( 23 )]
 script = ExtResource( 57 )
+
+[node name="Escape" type="Node2D" parent="StateMachine"]
+script = ExtResource( 59 )
+healthPath = NodePath("../../EnemyHealth")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/attackm1 = SubResource( 8 )
@@ -420,3 +426,4 @@ frames = SubResource( 14 )
 animation = "New Anim"
 
 [connection signal="animation_finished" from="EnemySprite" to="StateMachine/Attack_m1" method="_on_EnemySprite_animation_finished"]
+[connection signal="body_entered" from="HitCollider" to="." method="_on_HitCollider_body_entered"]

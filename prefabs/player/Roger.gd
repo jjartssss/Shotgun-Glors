@@ -100,15 +100,15 @@ func start_dodge():
 		dodge_direction = Vector2(input_direction.x, 0).normalized()
 		player.play("dodge")
 		can_dodge = false
-		cooldown_timer = dodge_cooldown
-		print("Dodge started: direction ", dodge_direction)
+#		cooldown_timer = dodge_cooldown
+#		print("Dodge started: direction ", dodge_direction)
 
 func update_dodge(delta):
 	dodge_timer -= delta
 	if dodge_timer <= 0:
 		is_dodging = false
-		print("Dodge ended")
+#		print("Dodge ended")
 	else:
 		velocity.x = dodge_direction.x * dodge_speed
 		move_and_slide(velocity)
-		print("Dodging: velocity ", velocity)
+#		print("Dodging: velocity ", velocity)

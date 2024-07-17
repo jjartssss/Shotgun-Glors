@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://prefabs/player/Roger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://fonts/PixelGameFont.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://UI/Guns/ShotGun.png" type="Texture" id=7]
 [ext_resource path="res://assets/tempbullet.png" type="Texture" id=8]
-[ext_resource path="res://prefabs/Zombies/TestEnemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/Components/Pickable.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI/Guns/Rifle.png" type="Texture" id=11]
 [ext_resource path="res://prefabs/player/Guns/MachineGun.tres" type="Resource" id=12]
@@ -220,12 +219,6 @@ limit_left = -100
 smoothing_enabled = true
 smoothing_speed = 25.0
 
-[node name="TestEnemy" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2361, 807 )
-
-[node name="TestEnemy2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2677, 807 )
-
 [node name="Pickable" parent="." instance=ExtResource( 10 )]
 position = Vector2( 650, 761 )
 whatGun = ExtResource( 12 )
@@ -239,45 +232,3 @@ position = Vector2( 4090, 790 )
 
 [node name="Spitter2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 5771, 792 )
-
-[node name="TestEnemy3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 6813, 783 )
-
-[node name="TestEnemy4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 7805, 783 )
-
-[node name="TestEnemy5" parent="." instance=ExtResource( 9 )]
-position = Vector2( 6478, 783 )
-
-[node name="TestEnemy6" parent="." instance=ExtResource( 9 )]
-position = Vector2( 5681, 783 )
-
-[node name="TestEnemy7" parent="." instance=ExtResource( 9 )]
-position = Vector2( 6673, 783 )
-
-[node name="TestEnemy8" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3354, 794 )
-
-[node name="TestEnemy15" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3697, 797 )
-
-[node name="TestEnemy16" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3844, 807 )
-
-[node name="TestEnemy9" parent="." instance=ExtResource( 9 )]
-position = Vector2( 8444, 791 )
-
-[node name="TestEnemy10" parent="." instance=ExtResource( 9 )]
-position = Vector2( 9436, 791 )
-
-[node name="TestEnemy11" parent="." instance=ExtResource( 9 )]
-position = Vector2( 8109, 791 )
-
-[node name="TestEnemy12" parent="." instance=ExtResource( 9 )]
-position = Vector2( 8444, 791 )
-
-[node name="TestEnemy13" parent="." instance=ExtResource( 9 )]
-position = Vector2( 9436, 791 )
-
-[node name="TestEnemy14" parent="." instance=ExtResource( 9 )]
-position = Vector2( 8109, 791 )
